@@ -1,0 +1,32 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Eliminar Usuario</h5>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Usuario" method="post">
+
+            <input type="hidden" asp-for="Id" class="form-control">
+
+            <div class="container-sm">
+                <div class="alert alert-danger" role="alert">
+                    ¿Está seguro de eliminar el usuario: @Html.DisplayTextFor(m => m.Nombre)?
+                </div>
+                <div class="row g-3 mt-3 justify-content-center">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    </div>
+                    <div class="col-auto">
+                        <a asp-action="Listar" asp-controller="Usuario" class="btn btn-secondary">CANCELAR</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>  
+
